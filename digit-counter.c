@@ -3,22 +3,17 @@
 #include <stdio.h>
 
 int main (void) {
-	int number, digits;
+	int digits = 0, n;
 
 	printf("Enter a number: \n");
-	scanf("%d", &number);
+	scanf("%d", &n);
 
-	if (number < 10)
-		printf("This number  has one digit.");
-	else if (number >10, number < 99)
-		printf("This number has two digits.");
-	else if (number > 100, number < 999)
-		printf("This number has three digits.");
-	else if (number > 1000, number < 9999)
-		printf("This number has four digits.");
-	else
-		printf("This number has over four digits.");
+	do {
+		n /= 10;
+		digits++;
+	} while (n > 0);
 
+	printf("The number has %d digit(s).\n", digits);
 
 	return 0;
 }
